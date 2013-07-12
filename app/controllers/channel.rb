@@ -9,7 +9,7 @@ post '/create' do
   @channel = Channel.create(user_id: @user.id, name: params[:input][:channel])
   params[:input][:handle].each do |handle|
     #need find or create by
-    @new_user = User.create(:username => handle)
+    @new_user = User.find_or_create_by_username(:username => handle)
     @new_user.fetch_tweets!
     Tweeter.create(user_id: @new_user.id, channel_id: @channel.id)
   end
@@ -35,20 +35,11 @@ Channel.update(@channel.id, name: params[:input][:channel] )
 @channel.users.destroy_all
  params[:input][:handle].each do |handle|
     #need find or create by
-    @new_user = User.create(:username => handle)
+    @new_user = User.find_or_create_by_username(:username => handle)
     @new_user.fetch_tweets!
     Tweeter.create(user_id: @new_user.id, channel_id: @channel.id)
   end
 
-  # @user1 = User.create(:username => params[:input][:handle1])
-  # @user2 = User.create(:username => params[:input][:handle2])
-  # @user3 = User.create(:username => params[:input][:handle3])
-  # @user1.fetch_tweets!
-  # @user2.fetch_tweets!
-  # @user3.fetch_tweets!
-  # Tweeter.create(user_id: @user1.id, channel_id: @channel.id)
-  # Tweeter.create(user_id: @user2.id, channel_id: @channel.id)
-  # Tweeter.create(user_id: @user3.id, channel_id: @channel.id)
 
 redirect '/my_page'
 end
