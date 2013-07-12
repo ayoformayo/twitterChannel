@@ -1,0 +1,14 @@
+<nav class='mypageHeader'><span>Biblios</span><a href="/logout">Log Out</a></nav>
+<div id='mypage'>
+<div id='mypageContent'>
+  <h1><%=@channel.name%></h1>
+  <% @channel.users.each do |user| %>
+  <%=user.username  %>
+  <ul>
+  <% user.tweets.each do |tweet| %>
+  <li><%= tweet.text %></li>
+  <% end %>
+  </ul>
+  <% end %>
+</div>
+</div>

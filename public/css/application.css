@@ -1,0 +1,158 @@
+body {
+  background-image:url('../tweed.png');
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+
+
+th {
+  text-align: left;
+}
+
+img {display: none;}
+
+
+
+nav p {font-family: 'Permanent Marker', cursive;}
+
+#container {
+  width: 33%;
+  border-style: solid;
+  border-color: grey;
+  height: 300px;
+  background: white;
+   background-color:rgba(255,255,255,0.3);
+   border-bottom-left-radius: 30px;
+   border-bottom-right-radius: 30px;
+   position: fixed;
+
+}
+#container p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 100px;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#container form {
+  margin-top: 50px;
+  text-align: center;}
+
+ #signInButton {
+    font-size: 21px;
+    border-radius: 10px;
+    padding: 10px 5px 10px 5px;
+    border-style: solid;
+    border-color: rgba(255,255,255,0.4);
+    
+    font-family: 'Permanent Marker', cursive;
+  }
+
+.mypageHeader{
+  position:fixed;
+  background-color: black;
+  color: white;
+  top: 0;
+  width: 100%;
+  height: 80px;
+
+}
+.mypageHeader span{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  margin-left: 15px;
+}
+.mypageHeader a {
+  display: inline;
+  position: fixed;
+  right: 10px;
+  font-size: 20px;
+  margin-top: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+#mypage {
+  margin-top: 80px;
+}
+
+#mypageSidebar{
+  position: fixed;
+  margin-top: 30px;
+  height:200px;
+  background-color:rgba(255,255,255,0.3);
+  width: 180px;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+#mypageSidebar ul {
+  margin-left: 0px;
+  padding-left: 0px;
+  width: 180px;
+}
+
+#mypageSidebar ul li{
+  list-style: none;
+  padding: 5px 0px 5px 5px;
+  /*margin-left: 10px;*/
+  border-bottom-style: solid;
+  border-color: black; 
+  
+}
+
+#mypageSidebar ul li a {
+  text-decoration: none;
+  color:black;
+  font-family: 'Permanent Marker', cursive;
+
+}
+
+#mypageContent {
+  margin-top: 30px;
+  position: relative;
+  width: 33%;
+  left: 33%;
+  background-color:rgba(255,255,255,0.3);
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+#mypageContent h1, #mypageContent ul {
+  padding: 10px 10px 10px 10px;
+}
+
+#mypageContent ul li {
+  list-style: none;
+  padding: 5px 10px 5px 10px;
+}
+
+#createContent {
+  top: 80px;
+  position: fixed;
+  width: 33%;
+  left: 33%;
+  height:50%;
+}
+
+.content {
+  margin-top: 80px;
+  position: fixed;
+  width: 33%;
+  left: 33%;
+  height: 200px;
+  background-color:rgba(255,255,255,0.3);
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+.form {
+  margin-top: 15px;
+}
