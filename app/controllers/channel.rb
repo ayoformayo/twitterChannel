@@ -31,16 +31,24 @@ end
 post '/edit' do
 @channel = Channel.find(params[:input][:channel_id])
 Channel.update(@channel.id, name: params[:input][:channel] )
+@channel.users.each {|user| user.tweets.destroy_all}
+@channel.users.destroy_all
+ params[:input][:handle].each do |handle|
+    #need find or create by
+    @new_user = User.create(:username => handle)
+    @new_user.fetch_tweets!
+    Tweeter.create(user_id: @new_user.id, channel_id: @channel.id)
+  end
 
-  @user1 = User.create(:username => params[:input][:handle1])
-  @user2 = User.create(:username => params[:input][:handle2])
-  @user3 = User.create(:username => params[:input][:handle3])
-  @user1.fetch_tweets!
-  @user2.fetch_tweets!
-  @user3.fetch_tweets!
-  Tweeter.create(user_id: @user1.id, channel_id: @channel.id)
-  Tweeter.create(user_id: @user2.id, channel_id: @channel.id)
-  Tweeter.create(user_id: @user3.id, channel_id: @channel.id)
+  # @user1 = User.create(:username => params[:input][:handle1])
+  # @user2 = User.create(:username => params[:input][:handle2])
+  # @user3 = User.create(:username => params[:input][:handle3])
+  # @user1.fetch_tweets!
+  # @user2.fetch_tweets!
+  # @user3.fetch_tweets!
+  # Tweeter.create(user_id: @user1.id, channel_id: @channel.id)
+  # Tweeter.create(user_id: @user2.id, channel_id: @channel.id)
+  # Tweeter.create(user_id: @user3.id, channel_id: @channel.id)
 
 redirect '/my_page'
 end

@@ -1,14 +1,12 @@
-<nav class='mypageHeader'><span>Biblios</span><a href="/logout">Log Out</a></nav>
+<nav class='mypageHeader'><span><a id='logo' href="/my_page">Biblios</a></span><a href="/logout">Log Out</a></nav>
 <div class='content'>
   <form action="/edit" method='post' class='form'>
     <label for="input[channel]">Name your Biblio</label>
     <input type="text" name='input[channel]' value = "<%=@channel.name %>"><br>
-    <label for="input[handle1]">Enter a Handle</label>
-    <input type="text" name='input[handle1]' value = "<%=@channel.users.first.username %>"><br>
-    <label for="input[handle2]">Enter a Handle</label>
-    <input type="text" name='input[handle2]' value = "<%=@channel.users[1].username %>"><br>
-    <label for="input[handle3]">Enter a Handle</label>
-    <input type="text" name='input[handle3]' value = "<%=@channel.users[2].username %>"><br>
+    <% @channel.users.each do |user| %>
+    <label for="input[handle][]">Enter a Handle</label>
+     <input type="text" name='input[handle][]' value='<%=user.username%>'><br>
+    <% end %>
     <input type="hidden" value='<%=@channel.id%>' name='input[channel_id]'>
     <input type="submit" value='Submit!'>
   </form>
