@@ -4,6 +4,12 @@ get '/' do
   erb :index
 end
 
+get '/logout' do
+
+session.clear
+redirect '/'
+end
+
 get '/sign_in' do
   # the `request_token` method is defined in `app/helpers/oauth.rb`
   redirect request_token.authorize_url
