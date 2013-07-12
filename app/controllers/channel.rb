@@ -7,15 +7,13 @@ post '/create' do
   p params
   @user = User.find(session[:user_id])
   @channel = Channel.create(user_id: @user.id, name: params[:input][:channel])
-  @user1 = User.create(:username => params[:input][:handle1])
-  @user2 = User.create(:username => params[:input][:handle2])
-  @user3 = User.create(:username => params[:input][:handle3])
-  @user1.fetch_tweets!
-  @user2.fetch_tweets!
-  @user3.fetch_tweets!
-  Tweeter.create(user_id: @user1.id, channel_id: @channel.id)
-  Tweeter.create(user_id: @user2.id, channel_id: @channel.id)
-  Tweeter.create(user_id: @user3.id, channel_id: @channel.id)
+  params[:input][:handle].each do |handle|
+    #need find or create by
+    @new_user = User.create(:username => handle)
+    @new_user.fetch_tweets!
+    Tweeter.create(user_id: @new_user.id, channel_id: @channel.id)
+  end
+
   redirect '/my_page'
 end
 
