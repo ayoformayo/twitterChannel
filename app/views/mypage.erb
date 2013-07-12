@@ -1,14 +1,14 @@
-<nav class='mypageHeader'><span>Biblios</span><a href="/logout">Log Out</a></nav>
+<nav class='mypageHeader'><span>Biblios</span><a id='logout' href="/logout">Log Out</a></nav>
 <div id='mypage'>
   
 
 <div id='mypageContent'>
   <h1><%=@user.username %>'s Biblios</h1>
-  <a href="/create">Create a Biblio</a>
+  <a id="create" href="/create">Create a Biblio</a>
   <ul>
   <% @user.channels.each do |channel| %>
   <% p channel.name %>
-    <li><span><a href="/channel/<%=channel.id%>"><%= channel.name %></a> | <a class='buttons' href="/edit/<%=channel.id%>">Edit</a> | <a class='buttons' href="/delete/<%=channel.id%>">Delete</a></span></li>
+    <li><span><a href="/channel/<%=channel.id%>"><%= channel.name %></a> | <a class='buttons' href="/edit/<%=channel.id%>">Edit</a> | <form id='delete' action='/delete' method='post'><input type='hidden' value ='<%=channel.id%>' name='id'><input type='submit' value='Delete'> </form></span></li>
   <% end %>
   </ul>
   

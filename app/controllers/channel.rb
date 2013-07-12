@@ -46,3 +46,9 @@ Channel.update(@channel.id, name: params[:input][:channel] )
 
 redirect '/my_page'
 end
+
+post '/delete' do
+  @channel = Channel.find(params[:id].to_i)
+  @channel.destroy
+  redirect '/my_page'
+end

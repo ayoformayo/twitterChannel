@@ -1,9 +1,9 @@
-<nav class='mypageHeader'><span>Biblios</span><a href="/logout">Log Out</a></nav>
+<nav class='mypageHeader'><span><a id='logo' href="/my_page">Biblios</a><a href="/logout">Log Out</a></span></nav>
 <div id='mypage'>
 <div id='mypageContent'>
   <h1><%=@channel.name%></h1>
   <% @channel.users.each do |user| %>
-  <%=user.username  %>
+  <h2><%=user.username  %></h2>
   <ul>
   <% user.tweets.each do |tweet| %>
   <li><%= tweet.text %></li>

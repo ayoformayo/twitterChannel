@@ -66,7 +66,13 @@ nav p {font-family: 'Permanent Marker', cursive;}
   font-size: 40px;
   margin-left: 15px;
 }
-.mypageHeader a {
+#logo{
+  text-decoration: none;
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+}
+ .mypageHeader a{
   display: inline;
   position: fixed;
   right: 10px;
@@ -74,6 +80,16 @@ nav p {font-family: 'Permanent Marker', cursive;}
   margin-top: 25px;
   text-decoration: none;
   color: white;
+}
+#delete{display: inline;}
+#logo{
+  text-decoration: none;
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+  position: fixed;
+  left: 10px;
+  margin-top: 10px;
 }
 
 #mypage {
@@ -111,18 +127,27 @@ nav p {font-family: 'Permanent Marker', cursive;}
   font-family: 'Permanent Marker', cursive;
 
 }
+#create {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
 
 #mypageContent {
   margin-top: 30px;
   position: relative;
-  width: 33%;
-  left: 33%;
+  width: 50%;
+  left: 25%;
   background-color:rgba(255,255,255,0.3);
   border-bottom-right-radius: 30px;
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
   border-top-left-radius: 30px;
 }
+#mypageContent h1, #mypageContent h2 {
+font-family: 'Permanent Marker', cursive;
+}
+
 
 #mypageContent h1, #mypageContent ul {
   padding: 10px 10px 10px 10px;
